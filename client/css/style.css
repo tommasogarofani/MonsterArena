@@ -5,7 +5,14 @@
   font-weight: 400;
   font-style: normal;
 
-  text-shadow: -2px -2px sandybrown;
+  &.player {
+    text-shadow: -2px -2px sandybrown;
+  }
+  
+  &.monster {
+    text-shadow: -2px -2px rgb(159, 233, 181);
+
+  }
 }
 
 /* palette */
@@ -89,4 +96,10 @@
 .player button:hover {
             background-color: rgba(53, 41, 15, 0.5);
             cursor: pointer;
+}
+
+/* enemy Style */
+
+.charsheet.monster {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0imGPx39dis3N_aht0lVkZNDipw3XvwdFKne4QzhHg&s=10);
 }
