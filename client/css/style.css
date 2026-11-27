@@ -21,14 +21,79 @@
    
 }
 
-
-
-.barra_salute::-moz-meter-bar {
-    background: #ff0000;
+body {
+    background-image: url(https://live.staticflickr.com/6120/6328627706_9d0c0f3f48_b.jpg);
+    background-size: cover;
 }
 
-.barra_mana::-moz-meter-bar {   
-    background: #0000ff;
+meter {
+    /* The gray background in Firefox */
+  background: none;
+  display: block;
+  width: 100%;
+  height: 3em;
+  border-radius: 100em;
+  overflow: hidden;
+  padding: 0px;
+
+  
+
+  &.mana_bar {
+    --background: rgba(53, 41, 15, 0.3);
+    --optimum: rgb(13, 186, 209);
+    --sub-optimum: rgb(29, 129, 175);
+    --sub-sub-optimum: rgb(20, 58, 184);
+  }
+
+  &.health_bar {
+    --background: rgba(53, 41, 15, 0.3);
+    --optimum: rgb(11, 177, 11);
+    --sub-optimum: gold;
+    --sub-sub-optimum: crimson;
+  }
+}
+
+/* The gray background in Chrome, etc. */
+meter::-webkit-meter-bar {
+  background: var(--background);
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+  height: 3em;
+  border-radius: 100em;
+  overflow: hidden;
+  padding: 0px;
+  
+}
+
+/* The green (optimum) bar in Firefox */
+meter:-moz-meter-optimum::-moz-meter-bar {
+  background: var(--optimum);
+}
+
+/* The green (optimum) bar in Chrome etc. */
+meter::-webkit-meter-optimum-value {
+  background: var(--optimum);
+}
+
+/* The yellow (sub-optimum) bar in Firefox */
+meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: var(--sub-optimum);
+}
+
+/* The yellow (sub-optimum) bar in Chrome etc. */
+meter::-webkit-meter-suboptimum-value {
+  background: var(--sub-optimum);
+}
+
+/* The red (even less good) bar in Firefox */
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: var(--sub-sub-optimum);
+}
+
+/* The red (even less good) bar in Chrome etc. */
+meter::-webkit-meter-even-less-good-value {
+  background: var(--sub-sub-optimum);
 }
 
 .game_space {
@@ -48,13 +113,63 @@
     min-height: 12em;
     padding: 1em;
 
-    border-radius: 1em;
-
+    border-radius: 1em;    
     
+    &.player p {
+        text-shadow: -1px -1px sandybrown;
+    }
+
+    &.monster p {
+        text-shadow: -1px -1px rgb(159, 233, 181);
+    }
 }
 
-.charsheet.player {
-            background-image: url(https://img.magnific.com/free-photo/grunge-style-canvas-texture-background-with-splats-stains_1048-13161.jpg?semt=ais_hybrid&w=740&q=80);
+.background_image{
+    z-index: -99;
+    display: block;
+
+    position: fixed;
+
+    &.player{
+    background-image: url(https://img.magnific.com/free-photo/grunge-style-canvas-texture-background-with-splats-stains_1048-13161.jpg?semt=ais_hybrid&w=740&q=80);
+    
+
+    
+    top: 2em;
+    left: 2em;
+    
+    width: 41%;
+    height: 22em;
+
+    border-radius: 1em;
+    filter: contrast(0.6);
+    }
+
+    &.monster {
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0imGPx39dis3N_aht0lVkZNDipw3XvwdFKne4QzhHg&s=10);
+
+        filter: contrast(0.7);
+
+    
+        top: 2em;
+        left: 57.5%;
+        
+        width: 41%;
+        height: 22em;
+
+        border-radius: 1em;
+        filter: contrast(0.4);
+    }
+
+
+}
+
+.contents_player {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
 }
 
 .name_container {
@@ -66,8 +181,10 @@
     flex-direction: row;
     width: 100%;
     height: 40%;
-    min-height: 2;
+    min-height: 2em;
     justify-content: space-between;
+
+    
 }
 
 .attribute {
@@ -100,6 +217,3 @@
 
 /* enemy Style */
 
-.charsheet.monster {
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl0imGPx39dis3N_aht0lVkZNDipw3XvwdFKne4QzhHg&s=10);
-}

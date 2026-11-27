@@ -21,52 +21,54 @@
     <div class="game_space">
 
         <div class="charsheet player">
-            <div class="name_container">
-                <h1 class="name player font_1">Svalvolas</h1>
-            </div>
-            
-            <div class="attribute_container">
-                <div class="attribute player">
-                    <meter class="health_bar" value="100" min="0" max="100"></meter>
-                    <p class="label font_1">Health</p>
+            <div class="background_image player"></div>
+            <div class="content player">
+                <div class="name_container">
+                    <h1 class="name player font_1">Svalvolas</h1>
+                </div>
+                
+                <div class="attribute_container">
+                    <div class="attribute player">
+                        <meter class="health_bar" value="10" min="0" max="100" optimum="100" high="70" low="20"></meter>
+                        <p class="label font_1">Health</p>
+                    </div>
+
+                    <div class="attribute player">
+                        <meter class="mana_bar" value="9" min="0" max="60" optimum="60" high="40" low="10"></meter>
+                        <p class="label font_1">Mana</p>
+                    </div>
                 </div>
 
-                <div class="attribute player">
-                    <meter value="100" min="0" max="60"></meter>
-                    <p class="label font_1">Mana</p>
+                <div class="action_container player">
+                    <button class="font_1">Fendente</button>
+                    <button class="font_1">Malocchio</button>
+                    <button class="font_1">Benedizione</button>
                 </div>
-            </div>
 
-            <div class="action_container player">
-                <button class="font_1">Fendente</button>
-                <button class="font_1">Malocchio</button>
-                <button class="font_1">Benedizione</button>
-            </div>
-
-            <div class="message_container">
-                <p class="message font_1">"Svalvolas hits for <span>12</span> damage."</p>
+                <div class="message_container">
+                    <p class="message font_1">"Svalvolas hits for <span>12</span> damage."</p>
+                </div>
             </div>
         </div>
 
         <div class="charsheet monster">
-            <div class="name_container monster">
-                <h1 class="name monster font_1">Gobelandro</h1>
-            </div>
-            
-            <div class="attribute_container monster">
-                <div class="attribute monster">
-                    <meter class="health_bar" value="100" min="0" max="100"></meter>
-                    <p class="label font_1">Health</p>
+            <div class="background_image monster"></div>
+            <div class="content monster">
+                <div class="name_container monster">
+                    <h1 class="name monster font_1">Gobelandro</h1>
+                </div>
+                
+                <div class="attribute_container monster">
+                    <div class="attribute monster">
+                        <meter class="health_bar monster" value="7" min="0" max="100" optimum="100" high="70" low="20"></meter>
+                        <p class="label font_1">Health</p>
+                    </div>
+
                 </div>
 
-                <div class="attribute monster">
-                    <meter value="100" min="0" max="60"></meter>
-                    <p class="label font_1">Mana</p>
+                <div class="message_container monster">
+                    <p class="message font_1">"Gobelandro hits for <span>7</span> damage."</p>
                 </div>
-            </div>
-
-            <div class="message_container monster">
-                <p class="message font_1">"Gobelandro hits for <span>7</span> damage."</p>
             </div>
         </div>
         
